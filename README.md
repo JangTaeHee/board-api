@@ -58,6 +58,7 @@ mysql> insert into keyword(keyword, writer) values('node.js,nestjs', 'jack');
 1. read board - cursor pagination
     ```bash
     # Request
+    # url: localhost:8080/board/list
     # query
     # - subject: like, (and), (optional)
     # - writer: like, (and), (optional)
@@ -81,6 +82,7 @@ mysql> insert into keyword(keyword, writer) values('node.js,nestjs', 'jack');
 2. create board
     ```bash
     # Request
+    # url: localhost:8080/board/create
     # body
     # - subject: (required)
     # - content: (required)
@@ -108,6 +110,7 @@ mysql> insert into keyword(keyword, writer) values('node.js,nestjs', 'jack');
 3. update board
     ```bash
     # Request
+    # url: localhost:8080/board/update/{boardId}
     # body
     # - subject: (optional)
     # - content: (optional)
@@ -133,6 +136,7 @@ mysql> insert into keyword(keyword, writer) values('node.js,nestjs', 'jack');
 4. delete board
     ```bash
     # Request
+    # url: localhost:8080/board/delete/{boardId}
     # body
     # - password: (required)
     curl --location --request DELETE 'localhost:8080/board/delete/1' \
@@ -147,6 +151,7 @@ mysql> insert into keyword(keyword, writer) values('node.js,nestjs', 'jack');
 5. read comment - cursor pagination
     ```bash
     # Request
+    # url: localhost:8080/comments/list/board/{boardId}
     # query
     # - type: 'lt' | 'gt', (optional), (default: 'lt')
     # - cursor (optional)
@@ -218,6 +223,7 @@ mysql> insert into keyword(keyword, writer) values('node.js,nestjs', 'jack');
 6. create comment
     ```bash
     # Request
+    # url: localhost:8080/comments/create/board/{boardId}
     # body
     # - content: (required)
     # - writer: (required)
