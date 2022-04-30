@@ -63,8 +63,8 @@ mysql> insert into keyword(keyword, writer) values('node.js,nestjs', 'jack');
     # - subject: like, (and), (optional)
     # - writer: like, (and), (optional)
     # - type: 'lt' | 'gt', (optional), (default: 'lt')
-    # - cursor (optional)
-    # - limit (optional), (default: 5)
+    # - cursor: boardId, (optional)
+    # - limit: (optional), (default: 5)
     curl --location --request GET 'localhost:8080/board/list?subject=first&writer=tom&limit=5&type=lt&cursor=0'
 
     # Response
@@ -154,8 +154,8 @@ mysql> insert into keyword(keyword, writer) values('node.js,nestjs', 'jack');
     # url: localhost:8080/comments/list/board/{boardId}
     # query
     # - type: 'lt' | 'gt', (optional), (default: 'lt')
-    # - cursor (optional)
-    # - limit (optional), (default: 5)
+    # - cursor: commentId, (optional)
+    # - limit: (optional), (default: 5)
     curl --location --request GET 'localhost:8080/comments/list/board/8?limit=5&type=lt&cursor=0'
 
     # Response
